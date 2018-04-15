@@ -10,8 +10,13 @@ var motRandom = mot[numRandom];
 console.log(motRandom);
 
 
-// $(document).ready(function () {
+$(document).ready(function () {
 
-$("#motAl").val(motRandom);
+    $("#img2").hide();
 
-// });
+    // Affichage des mots aléatoire dans l'input
+    $("#motAl").val(motRandom);
+
+
+
+});
