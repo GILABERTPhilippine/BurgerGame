@@ -1,21 +1,67 @@
-var mot = [
+var burger = [
     'BigMac',
     'CroqueMcdo',
     'Nuggets'
 ];
-var recup;
 
-var numRandom = Math.floor(Math.random() * mot.length);
-var motRandom = mot[numRandom];
-console.log(motRandom);
+var frite = [
+    'Frite',
+    'Potatoes'
+]
 
+var boisson = [
+    'Ice tea',
+    'Fanta Orange',
+    'Coca cola'
+]
+
+// Recupaeration des tableaux
+var numBurger = Math.floor(Math.random() * burger.length);
+var motBurger = burger[numBurger];
+console.log(motBurger);
+
+var numFrite = Math.floor(Math.random() * frite.length);
+var motFrite = frite[numFrite];
+console.log(motFrite);
+
+var numBoisson = Math.floor(Math.random() * boisson.length);
+var motBoisson = boisson[numBoisson];
+console.log(motBoisson);
+
+var menu = motBurger + " + " + motFrite + " + " + motBoisson
 
 $(document).ready(function () {
 
-    $("#img2").hide();
+    // $("#img2").hide();
 
     // Affichage des mots aléatoire dans l'input
-    $("#motAl").val(motRandom);
+    $("#motAl").val(menu);
+
+    $(".menu").click(function () {
+        var recupMenu = $(this).text();
+        console.log(recupMenu);
+
+        var target = $(this).data("click");
+
+        if (motBurger == recupMenu) {
+            alert("prout")
+        }
+        if (motFrite == recupMenu) {
+            alert("tosh")
+        }
+        if (motBoisson == recupMenu) {
+            alert("caca")
+        } else {
+            // $(".client").addClass("fadeOutLeftBig")
+        }
+
+        if (target == "valider") {
+            $(".client").addClass("fadeOutLeftBig")
+            alert(motBurger)
+        }
+
+
+    })
 
 
 
