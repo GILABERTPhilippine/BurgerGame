@@ -33,6 +33,7 @@ var menu = motBurger + " + " + motFrite + " + " + motBoisson
 $(document).ready(function () {
 
     $("#img2").hide();
+    $(".check").hide();
 
     // Affichage des mots aléatoire dans l'input
     $("#motAl").val(menu);
@@ -41,29 +42,33 @@ $(document).ready(function () {
         var recupMenu = $(this).text();
         console.log(recupMenu);
 
-        var target = $(this).data("click");
+        // var target = $(this).data("click");
 
         if (motBurger == recupMenu) {
-            alert("burgerOk")
+
+            // alert("BurgerOk")
         }
         if (motFrite == recupMenu) {
-            alert("FriteOk")
+            // alert("FriteOk")
         }
         if (motBoisson == recupMenu) {
-            alert("BoissonOk")
-        } else {
-            alert("loser")
+            // alert("BoissonOk")
         }
+        // else (menu != recupMenu){
 
-        $("#valider").click(function () {
-            $("#img1").animate({
-                right: '300px'
-            });
-            $("#img2").show();
-        }); {
-
-        }
-
+        // }
     })
+
+    $("#valider").click(function () {
+        $("#img1").animate({
+            right: '800px'
+        }).hide(1000);
+        $("#img2").show();
+    });
+
+    $(".btn").click(function () {
+        $(this).next("i").show();
+        console.log($(this).next().show());
+    });
 
 });
