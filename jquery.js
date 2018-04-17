@@ -15,7 +15,7 @@ var boisson = [
     'Coca cola'
 ]
 
-// Recupaeration des tableaux
+// Recupération des tableaux
 var numBurger = Math.floor(Math.random() * burger.length);
 var motBurger = burger[numBurger];
 console.log(motBurger);
@@ -32,7 +32,7 @@ var menu = motBurger + " + " + motFrite + " + " + motBoisson
 
 $(document).ready(function () {
 
-    // $("#img2").hide();
+    $("#img2").hide();
 
     // Affichage des mots aléatoire dans l'input
     $("#motAl").val(menu);
@@ -44,25 +44,26 @@ $(document).ready(function () {
         var target = $(this).data("click");
 
         if (motBurger == recupMenu) {
-            alert("prout")
+            alert("burgerOk")
         }
         if (motFrite == recupMenu) {
-            alert("tosh")
+            alert("FriteOk")
         }
         if (motBoisson == recupMenu) {
-            alert("caca")
+            alert("BoissonOk")
         } else {
-            // $(".client").addClass("fadeOutLeftBig")
+            alert("loser")
         }
 
-        if (target == "valider") {
-            $(".client").addClass("fadeOutLeftBig")
-            alert(motBurger)
-        }
+        $("#valider").click(function () {
+            $("#img1").animate({
+                right: '300px'
+            });
+            $("#img2").show();
+        }); {
 
+        }
 
     })
-
-
 
 });
