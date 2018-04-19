@@ -28,47 +28,43 @@ var numBoisson = Math.floor(Math.random() * boisson.length);
 var motBoisson = boisson[numBoisson];
 console.log(motBoisson);
 
-var menu = motBurger + " + " + motFrite + " + " + motBoisson
+var menu = motBurger + " + " + motFrite + " + " + motBoisson;
 
-$(document).ready(function () {
 
-    $("#img2").hide();
-    $(".check").hide();
+// Cache mon image2 et mes checks
+$("#img2").hide();
+$(".check").hide();
 
-    // Affichage des mots aléatoire dans l'input
-    $("#motAl").val(menu);
+// Affichage des mots aléatoire dans l'input
+$("#motAl").val(menu);
 
-    $(".menu").click(function () {
-        var recupMenu = $(this).text();
-        console.log(recupMenu);
 
-        // var target = $(this).data("click");
+// Recupere le text de mon menu
+$(".menuBurger").click(function () {
+    var recupBurger = $(this).text();
+    console.log(recupBurger);
+})
 
-        if (motBurger == recupMenu) {
+$(".menuFrite").click(function () {
+    var recupFrite = $(this).text();
+    console.log(recupFrite);
+})
 
-            // alert("BurgerOk")
-        }
-        if (motFrite == recupMenu) {
-            // alert("FriteOk")
-        }
-        if (motBoisson == recupMenu) {
-            // alert("BoissonOk")
-        }
-        // else (menu != recupMenu){
+$(".menuBoisson").click(function () {
+    var recupBoisson = $(this).text();
+    console.log(recupBoisson);
+})
 
-        // }
-    })
+// Animation sur mon bouton valider
+$("#valider").click(function () {
+    $("#img1").animate({
+        right: '800px'
+    }).hide(1000);
+    $("#img2").show();
 
-    $("#valider").click(function () {
-        $("#img1").animate({
-            right: '800px'
-        }).hide(1000);
-        $("#img2").show();
-    });
+});
 
-    $(".btn").click(function () {
-        $(this).next("i").show();
-        console.log($(this).next().show());
-    });
-
+// Toggle sur mes boutons menu 
+$(".btn").click(function () {
+    $(this).next().toggle();
 });
