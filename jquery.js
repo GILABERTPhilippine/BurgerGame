@@ -10,9 +10,9 @@ var frite = [
 ]
 
 var boisson = [
-    'Ice tea',
+    'Ice Tea',
     'Fanta Orange',
-    'Coca cola'
+    'Coca Cola'
 ]
 
 // Recupération des tableaux
@@ -33,38 +33,77 @@ var menu = motBurger + " + " + motFrite + " + " + motBoisson;
 
 // Cache mon image2 et mes checks
 $("#img2").hide();
+$("#img3").hide();
 $(".check").hide();
 
 // Affichage des mots aléatoire dans l'input
 $("#motAl").val(menu);
 
 
-// Recupere le text de mon menu
-$(".menuBurger").click(function () {
-    var recupBurger = $(this).text();
-    console.log(recupBurger);
-})
+$(".menu").click(function() {
+    var recupMenu = $(this).text();
+    console.log(recupMenu);
 
-$(".menuFrite").click(function () {
-    var recupFrite = $(this).text();
-    console.log(recupFrite);
-})
+    var target = $(this).data("click");
 
-$(".menuBoisson").click(function () {
-    var recupBoisson = $(this).text();
-    console.log(recupBoisson);
-})
+    if (motBurger == recupMenu) {
+        alert("1")
+    }
+    if (motFrite == recupMenu) {
+        alert("2")
+    }
+    if (motBoisson == recupMenu) {
+        alert("3")
+    } else {
+        // $(".client").addClass("fadeOutLeftBig")
+    }
 
-// Animation sur mon bouton valider
-$("#valider").click(function () {
-    $("#img1").animate({
-        right: '800px'
-    }).hide(1000);
-    $("#img2").show();
+    // switch (recupMenu) {
+    //     case  $(this).data(".menuBurger"):
+    //     case  $(this).data(".menuFrite"):
+    //     case  $(this).data(".menuBoisson"):
+
+    //     break;
+    // }
+
+    if (target == "valider") {
+        if (menu == recupMenu) {
+            $("#img1").addClass("fadeOutLeftBig").hide(900);
+            $("#img2").show(1000).addClass("fadeInRightBig");
+        } else {
+            $(".client").addClass("shake");
+        }
+    }
 
 });
 
 // Toggle sur mes boutons menu 
-$(".btn").click(function () {
+$(".btn").click(function() {
     $(this).next().toggle();
 });
+
+
+// // Recupere le text de mon menu
+// $(".menuBurger").click(function() {
+//     var recupBurger = $(this).text();
+//     console.log(recupBurger);
+// })
+
+// $(".menuFrite").click(function() {
+//     var recupFrite = $(this).text();
+//     console.log(recupFrite);
+// })
+
+// $(".menuBoisson").click(function() {
+//     var recupBoisson = $(this).text();
+//     console.log(recupBoisson);
+// })
+
+// // Animation sur mon bouton valider
+// $("#valider").click(function() {
+//     $("#img1").animate({
+//         right: '800px'
+//     }).hide(1000);
+//     $("#img2").show();
+
+// });
